@@ -1,0 +1,25 @@
+
+<h2>Reporte Invitados</h2>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+<table class="table" data-search="true">
+	<thead>
+		<tr>
+		<th scope="col">ID</th>
+		<th scope="col">ID Familia</th>
+		<th scope="col">Invitado</th>
+		<th scope="col">Invitado principal</th>
+		<th scope="col">Asistira?</th>
+		<th scope="col">Invitacion</th>
+		</tr>
+	</thead>
+	<tbody id="myTable">
+		<tr *ngFor="let guest of guests">
+			<th scope="row">{{guest.id}}</th>
+			<th>{{ guest.family_id}}</th>
+			<td>{{ guest.name}} {{guest.last_name}}</td>
+			<td>{{ guest.main_guest ? 'InvPrin' : ''}}</td>
+			<td>{{ guest.will_assist == null ? 'Sin respuesta' : guest.will_assist == true ? 'Si Asistira' : 'No Asistira' }}</td>
+			<td>{{ guest.invite_url}}</td>
+		</tr>
+	</tbody>
+</table>
